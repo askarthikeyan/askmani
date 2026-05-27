@@ -3,92 +3,233 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karthiketan A S | Portfolio</title>
-
+  <title>Karthiketan A S | AI Engineer</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+    html { scroll-behavior: smooth; }
     body {
-      height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
       color: white;
+      overflow-x: hidden;
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.35);
+      z-index: 1000;
+    }
+    nav h2 { color: #38bdf8; letter-spacing: 2px; }
+    nav a {
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-left: 24px;
+      transition: 0.3s;
+    }
+    nav a:hover { color: #38bdf8; }
+    section { padding: 100px 8%; }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 20px;
     }
-
-    .container {
-      max-width: 700px;
+    .hero-content { max-width: 900px; }
+    .tag {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 999px;
+      color: #38bdf8;
+      margin-bottom: 25px;
+      background: rgba(56, 189, 248, 0.08);
     }
-
     h1 {
-      font-size: 4rem;
-      margin-bottom: 15px;
-      letter-spacing: 2px;
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
-
-    p {
+    .highlight { color: #38bdf8; }
+    .hero p {
       font-size: 1.2rem;
       color: #cbd5e1;
-      margin-bottom: 30px;
-      line-height: 1.6;
+      line-height: 1.8;
+      max-width: 760px;
+      margin: auto;
     }
-
-    .notify-btn {
-      display: inline-block;
+    .buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn {
       padding: 14px 28px;
-      background: #38bdf8;
-      color: #0f172a;
+      border-radius: 999px;
       text-decoration: none;
-      border-radius: 50px;
       font-weight: bold;
       transition: 0.3s ease;
     }
-
-    .notify-btn:hover {
-      background: #7dd3fc;
-      transform: translateY(-2px);
+    .primary {
+      background: #38bdf8;
+      color: #0f172a;
     }
-
-    .logo {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
+    .secondary {
+      border: 1px solid #38bdf8;
       color: #38bdf8;
-      letter-spacing: 3px;
-      text-transform: uppercase;
     }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.8rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
+    .btn:hover { transform: translateY(-3px); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 28px;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .card h3 {
+      margin-bottom: 14px;
+      color: #38bdf8;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      color: #94a3b8;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+    .skills span {
+      display: inline-block;
+      margin: 8px;
+      padding: 10px 16px;
+      background: rgba(56,189,248,0.08);
+      border: 1px solid rgba(56,189,248,0.25);
+      border-radius: 999px;
+      color: #cbd5e1;
+    }
+    footer {
+      padding: 50px 8%;
+      text-align: center;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 2.8rem; }
+      nav { padding: 16px 5%; }
+      nav div { display: none; }
+      .hero p { font-size: 1rem; }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="logo">Karthiketan A S</div>
+  <nav>
+    <h2>Karthiketan</h2>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <h1>Portfolio Coming Soon</h1>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">AI • Computer Vision • Sports Analytics • Embedded Systems</div>
+      <h1>Building <span class="highlight">intelligent vision systems</span> for sports, edge AI, and wearable technology.</h1>
+      <p>
+        I’m Karthiketan A S, an AI engineer focused on real-time computer vision systems, boxing analytics, multi-camera tracking, pose estimation, embedded AI deployment, and wearable sensing platforms.
+      </p>
+      <div class="buttons">
+        <a href="#projects" class="btn primary">Explore Projects</a>
+        <a href="#contact" class="btn secondary">Connect</a>
+      </div>
+    </div>
+  </section>
 
-    <p>
-      AI Engineer specializing in Computer Vision, Sports Analytics, Embedded AI, and Wearable Systems.<br>
-      A full portfolio showcasing boxing analytics, multi-camera tracking, and AI research projects is launching soon.
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">
+      My work combines AI research with practical engineering. I’ve developed boxing analytics pipelines with punch classification, tactical inference, identity-consistent tracking, multi-view athlete monitoring, and explored embedded deployment on Jetson-class hardware alongside wearable biomedical sensing systems.
     </p>
+  </section>
 
-    <a href="#" class="notify-btn">View Resume</a>
-  </div>
+  <section id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-sub">Selected work based on your current engineering and research portfolio.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Boxing Analytics Platform</h3>
+        <p>Real-time boxer tracking, punch detection, punch type classification, head/body hit localization, tactical analytics, and visual overlays using YOLO pose + segmentation.</p>
+      </div>
+      <div class="card">
+        <h3>Multi-Camera Sports Tracking</h3>
+        <p>Top-view + side-view synchronized tracking with identity consistency using centroid logic, Hungarian assignment, and contextual correction.</p>
+      </div>
+      <div class="card">
+        <h3>Wearable Biomedical Patch</h3>
+        <p>Prototype health monitoring platform integrating ECG, SpO₂, skin temperature sensing, and embedded BLE architecture exploration.</p>
+      </div>
+      <div class="card">
+        <h3>Smart Insole Analytics</h3>
+        <p>Wearable gait intelligence for sports performance, posture control, asymmetry detection, and biomechanical analytics.</p>
+      </div>
+      <div class="card">
+        <h3>Edge AI Deployment</h3>
+        <p>Embedded deployment exploration for multi-camera vision pipelines using Jetson platforms, SBCs, and high-frame-rate industrial cameras.</p>
+      </div>
+      <div class="card">
+        <h3>Applied AI Research</h3>
+        <p>Focused on sports intelligence, human motion understanding, pose-based analytics, and robust real-time inference pipelines.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Stack</h2>
+    <div class="skills">
+      <span>Python</span>
+      <span>OpenCV</span>
+      <span>YOLOv8 / YOLO Pose</span>
+      <span>Computer Vision</span>
+      <span>Multi-Object Tracking</span>
+      <span>Pose Estimation</span>
+      <span>Segmentation</span>
+      <span>Embedded AI</span>
+      <span>NVIDIA Jetson</span>
+      <span>Wearable Sensors</span>
+      <span>Sports Analytics</span>
+      <span>Applied Statistics</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Let’s Build Something</h2>
+    <p class="section-sub">
+      Open to AI engineering, sports tech, embedded vision, and research collaborations.
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Karthiketan A S — AI Engineer & Computer Vision Developer
+  </footer>
 </body>
 </html>
