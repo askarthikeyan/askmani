@@ -1,1 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Boxing Analytics Portfolio</title>
 
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#0b0f17;
+      color:#f5f5f5;
+      line-height:1.6;
+    }
+
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px;
+      background:
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
+        url('https://images.unsplash.com/photo-1517438984742-1262db08379e?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+    }
+
+    .hero{
+      max-width:900px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      margin-bottom:20px;
+      color:#ff4040;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      color:#d8d8d8;
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 28px;
+      background:#ff4040;
+      color:white;
+      text-decoration:none;
+      border-radius:8px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#ff1a1a;
+      transform:translateY(-2px);
+    }
+
+    section{
+      padding:80px 8%;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      margin-bottom:40px;
+      color:#ff4040;
+      text-align:center;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .about-text p{
+      margin-bottom:20px;
+      color:#d6d6d6;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#121826;
+      padding:30px;
+      border-radius:16px;
+      transition:0.3s;
+      border:1px solid #20293a;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:#ff4040;
+    }
+
+    .card h3{
+      color:#ff4040;
+      margin-bottom:15px;
+    }
+
+    .tech-stack{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+      justify-content:center;
+    }
+
+    .tech{
+      background:#121826;
+      padding:12px 20px;
+      border-radius:30px;
+      border:1px solid #2c3547;
+    }
+
+    .timeline{
+      border-left:3px solid #ff4040;
+      padding-left:30px;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .timeline-item{
+      margin-bottom:40px;
+      position:relative;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      width:18px;
+      height:18px;
+      background:#ff4040;
+      border-radius:50%;
+      left:-40px;
+      top:5px;
+    }
+
+    .timeline-item h4{
+      color:#ff4040;
+      margin-bottom:8px;
+    }
+
+    footer{
+      background:#06080d;
+      text-align:center;
+      padding:30px;
+      color:#999;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2.5rem;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <h1>Smart Boxing Analytics</h1>
+      <p>
+        AI-powered multi-view boxing analytics system using Computer Vision,
+        Pose Estimation, Tracking, Punch Detection, Tactical Modeling,
+        and Sequential Strategy Analysis.
+      </p>
+
+      <a href="#projects" class="btn">Explore Project</a>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <h2 class="section-title">About The System</h2>
+
+    <div class="about">
+
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop" alt="boxing"/>
+
+      <div class="about-text">
+
+        <p>
+          The Smart Boxer Analytics System is an advanced AI-driven sports
+          analytics platform developed for boxing performance analysis using
+          synchronized top-view and side-view cameras.
+        </p>
+
+        <p>
+          The system performs boxer tracking, pose estimation, punch
+          classification, target zone detection, strategy inference,
+          probabilistic sequence modeling, and occlusion handling
+          using multi-view fusion.
+        </p>
+
+        <p>
+          The project integrates YOLO pose estimation, segmentation,
+          Markov models, Gaussian HMMs, temporal motion analysis,
+          and contextual sequence prediction to generate tactical insights
+          for coaches and athletes.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="projects">
+
+    <h2 class="section-title">Core Features</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Multi-View Tracking</h3>
+        <p>
+          Integrated top-view and side-view camera synchronization for
+          robust boxer identification under occlusion and detection failure.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Punch Classification</h3>
+        <p>
+          Detects Left/Right Hook, Jab, Cross, and Uppercut using
+          shoulder-elbow-wrist kinematic analysis.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Target Zone Detection</h3>
+        <p>
+          Identifies whether punches target the head or body using
+          opponent pose keypoints and spatial mapping.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Guard Detection</h3>
+        <p>
+          Detects defensive guard posture based on wrist-to-face
+          spatial relationships.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Strategy Modeling</h3>
+        <p>
+          Infers attacking, neutral, and defensive tactical states
+          using motion, distance, punch tempo, and contextual behavior.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Markov Prediction Engine</h3>
+        <p>
+          Uses opponent-conditioned probabilistic sequence modeling
+          to predict next punch and strategic transitions.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <section>
+
+    <h2 class="section-title">Analytics Pipeline</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h4>1. Video Acquisition</h4>
+        <p>
+          Allied Vision cameras capture synchronized top-view and side-view
+          sparring sessions.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>2. Detection & Tracking</h4>
+        <p>
+          YOLO Pose + Segmentation + ByteTrack perform real-time
+          boxer tracking and identity consistency.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>3. Pose Analysis</h4>
+        <p>
+          Extracts skeletal keypoints for punch mechanics,
+          guard posture, and engagement analysis.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>4. Punch Analytics</h4>
+        <p>
+          Punches are classified using arm trajectories,
+          wrist velocity, and elbow angles.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>5. Tactical Intelligence</h4>
+        <p>
+          Markov Models and sequence learning infer strategy transitions
+          and opponent-conditioned actions.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h4>6. Visualization</h4>
+        <p>
+          Real-time overlays, punch counters, tactical indicators,
+          and analytics dashboards are generated.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TECHNOLOGIES -->
+  <section>
+
+    <h2 class="section-title">Technology Stack</h2>
+
+    <div class="tech-stack">
+
+      <div class="tech">Python</div>
+      <div class="tech">YOLOv8</div>
+      <div class="tech">OpenCV</div>
+      <div class="tech">DeepSORT</div>
+      <div class="tech">ByteTrack</div>
+      <div class="tech">PyTorch</div>
+      <div class="tech">Pose Estimation</div>
+      <div class="tech">Markov Models</div>
+      <div class="tech">Gaussian HMM</div>
+      <div class="tech">Computer Vision</div>
+      <div class="tech">Multi-View Fusion</div>
+      <div class="tech">Sports Analytics</div>
+
+    </div>
+
+  </section>
+
+  <!-- RESULTS -->
+  <section>
+
+    <h2 class="section-title">Research Outcomes</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Robust Occlusion Handling</h3>
+        <p>
+          Improved punch recognition reliability using top-view +
+          side-view fusion under referee and boxer occlusions.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Sequence Prediction</h3>
+        <p>
+          Opponent-conditioned Markov models achieved promising
+          next-punch prediction performance.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Strategy Detection</h3>
+        <p>
+          Offensive, defensive, and neutral tactical states inferred
+          from continuous movement behavior.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Coach-Centric Analytics</h3>
+        <p>
+          Converts raw training videos into actionable tactical insights
+          for athlete performance optimization.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+
+    <h2 class="section-title">Project Information</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Research Domain</h3>
+        <p>
+          Computer Vision, Sports Analytics,
+          Human Pose Estimation, Tactical AI.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Institution</h3>
+        <p>
+          Indian Institute of Technology Madras (IIT Madras)
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Application</h3>
+        <p>
+          Elite boxing performance analysis, training analytics,
+          tactical coaching assistance, and combat sports AI.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    <p>
+      Smart Boxing Analytics Portfolio © 2026
+    </p>
+  </footer>
+
+</body>
+</html>
