@@ -1,233 +1,608 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karthikeyan A S | AI Engineer</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: linear-gradient(135deg, #020617, #0f172a, #1e293b);
-      color: white;
-      overflow-x: hidden;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
     }
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      backdrop-filter: blur(12px);
-      background: rgba(15, 23, 42, 0.35);
-      z-index: 1000;
+
+    html{
+      scroll-behavior:smooth;
     }
-    nav h2 { color: #38bdf8; letter-spacing: 2px; }
-    nav a {
-      color: #cbd5e1;
-      text-decoration: none;
-      margin-left: 24px;
-      transition: 0.3s;
+
+    body{
+      background:
+      radial-gradient(circle at top left,#0f172a,#020617 55%);
+      color:white;
+      overflow-x:hidden;
     }
-    nav a:hover { color: #38bdf8; }
-    section { padding: 100px 8%; }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      padding:22px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(2,6,23,0.65);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      z-index:1000;
     }
-    .hero-content { max-width: 900px; }
-    .tag {
-      display: inline-block;
-      padding: 10px 18px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      border-radius: 999px;
-      color: #38bdf8;
-      margin-bottom: 25px;
-      background: rgba(56, 189, 248, 0.08);
+
+    nav h2{
+      color:#38bdf8;
+      letter-spacing:2px;
+      font-size:1.3rem;
     }
-    h1 {
-      font-size: 4.5rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
+
+    nav div{
+      display:flex;
+      align-items:center;
+      gap:30px;
     }
-    .highlight { color: #38bdf8; }
-    .hero p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      line-height: 1.8;
-      max-width: 760px;
-      margin: auto;
+
+    nav a{
+      text-decoration:none;
+      color:#cbd5e1;
+      transition:0.3s;
+      font-size:0.95rem;
     }
-    .buttons {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
+
+    nav a:hover{
+      color:#38bdf8;
     }
-    .btn {
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s ease;
+
+    section{
+      padding:110px 8%;
     }
-    .primary {
-      background: #38bdf8;
-      color: #0f172a;
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
-    .secondary {
-      border: 1px solid #38bdf8;
-      color: #38bdf8;
+
+    .hero-wrapper{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:80px;
+      flex-wrap:wrap;
+      max-width:1300px;
+      width:100%;
     }
-    .btn:hover { transform: translateY(-3px); }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
+
+    .hero-left{
+      flex:1;
+      min-width:320px;
     }
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 28px;
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
+
+    .tag{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:999px;
+      border:1px solid rgba(56,189,248,0.25);
+      background:rgba(56,189,248,0.08);
+      color:#38bdf8;
+      margin-bottom:28px;
+      font-size:0.9rem;
     }
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(56, 189, 248, 0.35);
+
+    .hero h1{
+      font-size:4.6rem;
+      line-height:1.08;
+      margin-bottom:28px;
+      font-weight:800;
     }
-    .card h3 {
-      margin-bottom: 14px;
-      color: #38bdf8;
+
+    .highlight{
+      color:#38bdf8;
     }
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
+
+    .hero p{
+      color:#cbd5e1;
+      line-height:1.9;
+      font-size:1.08rem;
+      max-width:680px;
     }
-    .section-sub {
-      color: #94a3b8;
-      max-width: 700px;
-      line-height: 1.7;
+
+    .buttons{
+      display:flex;
+      gap:18px;
+      margin-top:40px;
+      flex-wrap:wrap;
     }
-    .skills span {
-      display: inline-block;
-      margin: 8px;
-      padding: 10px 16px;
-      background: rgba(56,189,248,0.08);
-      border: 1px solid rgba(56,189,248,0.25);
-      border-radius: 999px;
-      color: #cbd5e1;
+
+    .btn{
+      padding:15px 30px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s ease;
     }
-    footer {
-      padding: 50px 8%;
-      text-align: center;
-      color: #94a3b8;
-      border-top: 1px solid rgba(255,255,255,0.08);
+
+    .primary{
+      background:#38bdf8;
+      color:#020617;
     }
-    @media (max-width: 768px) {
-      h1 { font-size: 2.8rem; }
-      nav { padding: 16px 5%; }
-      nav div { display: none; }
-      .hero p { font-size: 1rem; }
+
+    .secondary{
+      border:1px solid rgba(56,189,248,0.4);
+      color:#38bdf8;
     }
+
+    .btn:hover{
+      transform:translateY(-4px);
+    }
+
+    /* PROFILE IMAGE */
+
+    .hero-right{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .avatar-frame{
+      position:relative;
+      padding:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#38bdf8,#2563eb,#1e40af);
+      box-shadow:
+      0 0 30px rgba(56,189,248,0.35),
+      0 0 80px rgba(37,99,235,0.15);
+    }
+
+    .avatar-frame img{
+      width:330px;
+      height:330px;
+      border-radius:50%;
+      object-fit:cover;
+      border:5px solid #020617;
+      display:block;
+    }
+
+    /* SECTION TITLES */
+
+    .section-title{
+      font-size:2.7rem;
+      margin-bottom:16px;
+    }
+
+    .section-sub{
+      color:#94a3b8;
+      line-height:1.8;
+      max-width:760px;
+    }
+
+    /* GRID */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:28px;
+      margin-top:45px;
+    }
+
+    /* CARD */
+
+    .card{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      padding:30px;
+      border-radius:26px;
+      backdrop-filter:blur(10px);
+      transition:0.35s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(56,189,248,0.35);
+      box-shadow:0 20px 40px rgba(56,189,248,0.08);
+    }
+
+    .card h3{
+      color:#38bdf8;
+      margin-bottom:15px;
+      font-size:1.25rem;
+    }
+
+    .card p{
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    /* PROJECT CARDS */
+
+    .project-link{
+      text-decoration:none;
+      color:white;
+    }
+
+    .project-tags{
+      margin-top:18px;
+    }
+
+    .project-tags span{
+      display:inline-block;
+      padding:8px 14px;
+      margin:5px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.08);
+      border:1px solid rgba(56,189,248,0.15);
+      color:#cbd5e1;
+      font-size:0.82rem;
+    }
+
+    .project-arrow{
+      margin-top:24px;
+      color:#38bdf8;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .project-link:hover .project-arrow{
+      transform:translateX(8px);
+    }
+
+    /* SKILLS */
+
+    .skills{
+      margin-top:40px;
+    }
+
+    .skills span{
+      display:inline-block;
+      margin:8px;
+      padding:11px 18px;
+      border-radius:999px;
+      background:rgba(56,189,248,0.08);
+      border:1px solid rgba(56,189,248,0.2);
+      color:#cbd5e1;
+    }
+
+    /* CONTACT */
+
+    .contact-box{
+      margin-top:35px;
+      padding:35px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-box p{
+      margin-bottom:12px;
+      color:#cbd5e1;
+    }
+
+    footer{
+      padding:40px 8%;
+      text-align:center;
+      color:#64748b;
+      border-top:1px solid rgba(255,255,255,0.06);
+      margin-top:50px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:3rem;
+      }
+
+      nav{
+        padding:18px 6%;
+      }
+
+      nav div{
+        display:none;
+      }
+
+      .hero-wrapper{
+        gap:50px;
+      }
+
+      .avatar-frame img{
+        width:260px;
+        height:260px;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+    }
+
   </style>
 </head>
+
 <body>
+
+  <!-- NAVBAR -->
+
   <nav>
     <h2>Karthikeyan</h2>
+
     <div>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
+  <!-- HERO -->
+
   <section class="hero">
-    <div class="hero-content" style="display:flex;align-items:center;justify-content:center;gap:60px;flex-wrap:wrap;max-width:1200px;">
-      <div style="flex:1;min-width:320px;text-align:left;">
-        <div class="tag">PhD Research Scholar • Computer Vision • Embedded Systems</div>
-        <h1>Hi, I'm <span class="highlight">Karthikeyan A S</span><br>Building intelligent AI systems for sports and healthcare.</h1>
-        <p style="margin:0;max-width:650px;">
-          PhD Research Scholar specializing in Computer Vision, Biomechanics, and Embedded Systems, developing AI-driven multi-view tracking systems, boxing analytics platforms, wearable sensing devices, and edge AI solutions.
+
+    <div class="hero-wrapper">
+
+      <!-- LEFT -->
+
+      <div class="hero-left">
+
+        <div class="tag">
+          PhD Research Scholar • Computer Vision • Sports Analytics • Embedded AI
+        </div>
+
+        <h1>
+          Building <span class="highlight">intelligent AI systems</span><br>
+          for sports, healthcare, and embedded vision.
+        </h1>
+
+        <p>
+          I’m <strong>Karthikeyan A S</strong>, a PhD Research Scholar at IIT Madras specializing in Computer Vision, Biomechanics, and Embedded Systems. My work focuses on AI-driven sports analytics, multi-camera tracking, wearable sensing platforms, and real-time edge AI solutions.
         </p>
-        <div class="buttons" style="justify-content:flex-start;">
+
+        <div class="buttons">
           <a href="#projects" class="btn primary">Explore Projects</a>
           <a href="#contact" class="btn secondary">Contact Me</a>
         </div>
+
       </div>
-      <div style="flex:0 0 320px;display:flex;justify-content:center;">
-        <<img src="profile.jpg" alt="Karthikeyan" style="width:300px;height:300px;object-fit:cover;border-radius:30px;border:3px solid rgba(56,189,248,0.4);box-shadow:0 20px 60px rgba(56,189,248,0.2);" />
+
+      <!-- RIGHT -->
+
+      <div class="hero-right">
+
+        <div class="avatar-frame">
+
+          <img src="profile.jpg" alt="Karthikeyan A S">
+
+        </div>
+
       </div>
+
     </div>
+
   </section>
+
+  <!-- ABOUT -->
 
   <section id="about">
+
     <h2 class="section-title">About Me</h2>
+
     <p class="section-sub">
-      I am a PhD Research Scholar at IIT Madras working at the intersection of computer vision, biomechanics, embedded systems, and intelligent sensing. My work focuses on building deployable AI systems that bridge research and engineering—from sports analytics platforms to embedded healthcare devices.
+      I work at the intersection of computer vision, biomechanics, embedded systems, and intelligent sensing. My research bridges AI theory and deployable engineering systems through sports analytics, wearable healthcare devices, and edge AI platforms.
     </p>
+
   </section>
 
-  <section>
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+
     <h2 class="section-title">Experience</h2>
+
     <div class="grid">
-      <div class="card"><h3>IIT Madras — PhD Research Scholar</h3><p>Jul 2022–Present • Multi-view athlete tracking, boxing analytics, pose estimation, tactical AI, intelligent sensing research.</p></div>
-      <div class="card"><h3>IIT Madras — NPTEL Teaching Assistant</h3><p>Statistics for Biomedical Engineers course support, mentoring, evaluation, and academic assistance.</p></div>
-      <div class="card"><h3>IIT Madras — Project Associate</h3><p>Wi-Fi embedded systems, PCB design, firmware, IoT prototypes, hardware experimentation.</p></div>
-      <div class="card"><h3>R&D Engineer</h3><p>Circuit design, PCB reverse engineering, power electronics experimentation, embedded product development.</p></div>
+
+      <div class="card">
+        <h3>IIT Madras — PhD Research Scholar</h3>
+        <p>
+          Research in biomechanics, intelligent sensing, athlete tracking, pose estimation, and combat sports analytics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>NPTEL — Teaching Assistant</h3>
+        <p>
+          Assisted in Statistics for Biomedical Engineers including mentoring, evaluation, and academic support.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Project Associate — IIT Madras</h3>
+        <p>
+          Embedded Wi-Fi systems, IoT firmware, PCB design, and hardware prototyping.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>R&D Engineer</h3>
+        <p>
+          Circuit design, embedded systems, PCB reverse engineering, and power electronics experimentation.
+        </p>
+      </div>
+
     </div>
+
   </section>
+
+  <!-- PROJECTS -->
 
   <section id="projects">
-    <h2 class="section-title">Flagship Projects</h2>
-    <p class="section-sub">Research and engineering projects aligned with AI deployment and intelligent systems.</p>
+
+    <h2 class="section-title">Featured Projects</h2>
+
+    <p class="section-sub">
+      Research-driven AI systems spanning sports analytics, embedded intelligence,
+      wearable sensing, and real-time computer vision.
+    </p>
+
     <div class="grid">
-      <div class="card"><h3>Smart Boxing Analytics System</h3><p>Granted patent + publications. Multi-camera analytics framework with pose estimation, DeepSORT, punch classification, tactical intelligence, and bout analytics.</p></div>
-      <div class="card"><h3>Multi-View Athlete Tracking</h3><p>Occlusion-resilient top-view + side-view identity preservation pipeline for sports monitoring.</p></div>
-      <div class="card"><h3>Wearable Biomedical Patch</h3><p>Embedded sensing architecture for ECG, SpO₂, temperature, and BLE-based monitoring.</p></div>
-      <div class="card"><h3>Smart Insole Performance Analytics</h3><p>Biomechanics-focused gait monitoring, asymmetry analytics, posture control, and sports performance intelligence.</p></div>
-      <div class="card"><h3>Embedded IoT Systems</h3><p>ESP/MCU hardware prototypes, PCB design, firmware development, rapid prototyping with 3D printed enclosures.</p></div>
-      <div class="card"><h3>Edge AI Vision Systems</h3><p>Jetson-class deployment exploration for industrial cameras, real-time inference, and cloud-connected vision pipelines.</p></div>
+
+      <a href="projects/boxing-analytics.html" class="project-link">
+        <div class="card">
+
+          <h3>🥊 Smart Boxing Analytics System</h3>
+
+          <p>
+            AI-powered multi-camera boxing analytics platform with pose estimation,
+            punch classification, tactical inference, and real-time tracking.
+          </p>
+
+          <div class="project-tags">
+            <span>YOLOv8</span>
+            <span>DeepSORT</span>
+            <span>Pose Estimation</span>
+          </div>
+
+          <div class="project-arrow">
+            View Project →
+          </div>
+
+        </div>
+      </a>
+
+      <a href="projects/multi-view-tracking.html" class="project-link">
+        <div class="card">
+
+          <h3>🎥 Multi-View Athlete Tracking</h3>
+
+          <p>
+            Occlusion-resilient top-view + side-view identity preservation system.
+          </p>
+
+          <div class="project-tags">
+            <span>Tracking</span>
+            <span>Computer Vision</span>
+            <span>OpenCV</span>
+          </div>
+
+          <div class="project-arrow">
+            View Project →
+          </div>
+
+        </div>
+      </a>
+
+      <a href="projects/smart-insole.html" class="project-link">
+        <div class="card">
+
+          <h3>👟 Smart Insole Analytics</h3>
+
+          <p>
+            Wearable gait intelligence system for posture monitoring and sports biomechanics.
+          </p>
+
+          <div class="project-tags">
+            <span>Wearables</span>
+            <span>IoT</span>
+            <span>Biomechanics</span>
+          </div>
+
+          <div class="project-arrow">
+            View Project →
+          </div>
+
+        </div>
+      </a>
+
+      <a href="projects/wearable-patch.html" class="project-link">
+        <div class="card">
+
+          <h3>❤️ Wearable Biomedical Patch</h3>
+
+          <p>
+            Embedded healthcare monitoring platform integrating ECG, SpO₂, and BLE connectivity.
+          </p>
+
+          <div class="project-tags">
+            <span>Biomedical</span>
+            <span>Embedded AI</span>
+            <span>nRF52840</span>
+          </div>
+
+          <div class="project-arrow">
+            View Project →
+          </div>
+
+        </div>
+      </a>
+
     </div>
+
   </section>
 
-  <section>
-    <h2 class="section-title">Education</h2>
-    <div class="grid">
-      <div class="card"><h3>PhD</h3><p>Indian Institute of Technology Madras</p></div>
-      <div class="card"><h3>M.E. VLSI Design</h3><p>Anna University</p></div>
-      <div class="card"><h3>B.E. Electronics & Communication</h3><p>PSG College of Technology</p></div>
-    </div>
-  </section>
+  <!-- SKILLS -->
 
   <section id="skills">
+
     <h2 class="section-title">Technical Expertise</h2>
+
     <div class="skills">
-      <span>Python</span><span>C</span><span>Embedded C</span><span>YOLO</span><span>Pose Estimation</span><span>DeepSORT</span><span>OpenCV</span><span>Computer Vision</span><span>Multi-Object Tracking</span><span>Embedded AI</span><span>PCB Design</span><span>IoT Systems</span><span>NVIDIA Jetson</span><span>Raspberry Pi</span><span>MATLAB</span><span>Altium</span><span>KiCad</span><span>FPGA</span><span>Biomechanics</span><span>Sports Analytics</span>
+
+      <span>Python</span>
+      <span>Computer Vision</span>
+      <span>YOLOv8</span>
+      <span>DeepSORT</span>
+      <span>Pose Estimation</span>
+      <span>Embedded Systems</span>
+      <span>OpenCV</span>
+      <span>PCB Design</span>
+      <span>IoT</span>
+      <span>Edge AI</span>
+      <span>NVIDIA Jetson</span>
+      <span>MATLAB</span>
+      <span>Biomechanics</span>
+      <span>Sports Analytics</span>
+
     </div>
+
   </section>
+
+  <!-- CONTACT -->
 
   <section id="contact">
+
     <h2 class="section-title">Contact</h2>
-    <p class="section-sub">
-      Email: askmani96@gmail.com<br>
-      Phone: +91 7867031852<br>
-      LinkedIn: linkedin.com/in/ask-mani<br>
-      Google Scholar available on request.
-    </p>
+
+    <div class="contact-box">
+
+      <p>📧 askmani96@gmail.com</p>
+      <p>📱 +91 7867031852</p>
+      <p>🔗 linkedin.com/in/ask-mani</p>
+      <p>🎓 IIT Madras — Applied Mechanics & Biomedical Engineering</p>
+
+    </div>
+
   </section>
 
+  <!-- FOOTER -->
+
   <footer>
-    © 2026 Karthikeyan A S — AI Engineer & Computer Vision Developer
+    © 2026 Karthikeyan A S • AI Engineer • Computer Vision Researcher
   </footer>
+
 </body>
 </html>
+```
